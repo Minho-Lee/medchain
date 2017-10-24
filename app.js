@@ -40,7 +40,7 @@ app.get('/patient', function(req, res) {
 app.post('/patient-info', function(req, res) {
 console.log("the patient I am looking for in the db: "+ req.body.name);
 
-	 Patient.find({"name":req.body.name}, "name age diseases",function (err, doc) {
+	 Patient.find({"name":req.body.name},function (err, doc) {
 	 	console.log(doc);
 	 	console.log(err);
          res.render('patient-info.ejs', {
