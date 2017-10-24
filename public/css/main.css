@@ -380,15 +380,19 @@ input[type="text"] {
 .showDashboard {
 		height: 300px;
 }
+/* * * * * * * * * * * * * */
+/* main.ejs */
+.glyphicon-heart:hover {
+	color: red;
+}
+/* * * * * * * * * * * * * */
+
 
 /* * * * * * * * * * * * * */
 /* app.ejs */
-#viewDiv {
-	padding: 0;
-	margin: 50px 0;
-	height: 500px;
-	width: 100%;
-}
+
+
+
 /* * * * * * * * * * * * * */
 
 .dropbtn {
