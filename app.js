@@ -27,9 +27,17 @@ app.get('/', function(req, res) {
 	res.render('main.ejs');
 });
 
-app.get('/app', function(req, res) {
-	res.render('app.ejs');
+app.get('/doctor', function(req, res) {
+	res.render('doctor.ejs');
 });
+
+app.get('/patient', function(req, res) {
+	res.render('patient.ejs')
+})
+
+app.get('/pharmacist', function(req, res) {
+	res.render('pharmacist.ejs');
+})
 
 var appEnv = cfenv.getAppEnv();
 // console.log(appEnv);

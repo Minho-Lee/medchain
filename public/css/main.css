@@ -381,19 +381,45 @@ input[type="text"] {
 		height: 300px;
 }
 /* * * * * * * * * * * * * */
+/* global */
+body {
+	padding-top: 50px;
+}
+
+
+/* * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * */
 /* main.ejs */
 .glyphicon-heart:hover {
 	color: red;
 }
-/* * * * * * * * * * * * * */
 
 
 /* * * * * * * * * * * * * */
-/* app.ejs */
+
+
+/* * * * * * * * * * * * * */
+/* patient.ejs */
 
 
 
 /* * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * */
+/* doctor.ejs */
+
+
+
+/* * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * */
+/* pharmacist.ejs */
+
+
+
+/* * * * * * * * * * * * * */
+
 
 .dropbtn {
 		background: none;
@@ -406,10 +432,6 @@ input[type="text"] {
 		border-top-color: #fdd600;
 		border-bottom-color: #fdd600;
 		width: 176.06px;
-}
-
-a {
-		color: #fdd600;
 }
 
 
