@@ -6,6 +6,12 @@ let app = express();
 let bodyParser = require('body-parser');
 var cfenv = require('cfenv');
 
+var mongoose = require('mongoose');
+
+var models = require('./models/patient.js');
+var Patient = models.patientModel;
+
+mongoose.connect('mongodb://sssaini1:sssaini1@ds231725.mlab.com:31725/medical-chain');
 
 app.use(bodyParser.urlencoded({
 	extended: false
@@ -27,13 +33,28 @@ app.get('/', function(req, res) {
 	res.render('main.ejs');
 });
 
-app.get('/doctor', function(req, res) {
-	res.render('doctor.ejs');
-});
-
 app.get('/patient', function(req, res) {
 	res.render('patient.ejs')
 })
+
+app.post('/patient-info', function(req, res) {
+console.log("the patient I am looking for in the db: "+ req.body.name);
+
+	 Patient.find({"name":req.body.name}, "name age diseases",function (err, doc) {
+	 	console.log(doc);
+	 	console.log(err);
+         res.render('patient-info.ejs', {
+                doc: doc
+            });
+    });
+
+
+
+});
+
+app.get('/doctor', function(req, res) {
+	res.render('doctor.ejs');
+});
 
 app.get('/pharmacist', function(req, res) {
 	res.render('pharmacist.ejs');
