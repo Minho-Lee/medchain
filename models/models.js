@@ -11,5 +11,14 @@ var patientSchema = new Schema({
 
 var patientModel = mongoose.model('patient', patientSchema, 'patient');
 
-module.exports = {patientModel: patientModel};
 
+var doctorSchema = new Schema({
+    name: String,
+    age: String,
+    gender:String,
+    patients:[patientSchema]
+});
+
+var doctorModel = mongoose.model('doctor', doctorSchema, 'doctor');
+
+module.exports = {patientModel: patientModel, doctorModel: doctorModel};
