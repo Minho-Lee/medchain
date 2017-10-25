@@ -103,7 +103,7 @@ app.post('/doctor-main', function(req, res) {
             } else {
                 console.log('saved');
 
-                res.render('doctor-info.ejs', {
+                res.render('doctor-main.ejs', {
                     doc: doc
                 });
             }
@@ -120,8 +120,8 @@ app.post('/doctor-main', function(req, res) {
 
 });
 
-app.get('/pharmacist', function(req, res) {
-    res.render('pharmacist.ejs');
+app.get('/pharmacist-main', function(req, res) {
+    res.render('pharmacist-main.ejs');
 })
 
 var appEnv = cfenv.getAppEnv();
