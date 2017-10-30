@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+			<title>Bootstrap Example</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<!-- For now I am using Bootstrap 3 cdn link. Feel free to use Bootstrap 4 by replacing the link below -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+			<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body id='patient-info-ejs'>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		  <div class="container-fluid">
+				<div class="navbar-header">
+					 <a class="navbar-brand" href="#">
+						<i class="glyphicon glyphicon glyphicon-heart"></i>
+						Medchain
+						<!--Image to be inserted later (need photoshop) <img src='/images/medchain_text.png'/> -->
+					</a>
+				</div>
+				<ul class="nav navbar-nav">
+					 <li class='active'><a href="/patient-main">Patient</a></li>
+					 <li><a href="/doctor-main">Doctor</a></li>
+					 <li><a href="/pharmacist-main">Pharmacist</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class='container-fluid'>
+			<div class='row' id='header-section'>
+				<div class='col-md-2 col-sm-2'>
+					<div id='face-picture'>
+						<img src='../images/square-sample-face.jpg' width='120px' class='img-responsive'/>
+					</div>
+				</div>
+				<div class='col-md-5 col-sm-5'>
+					<div id='name-and-role'>
+						<h2><%=doc[0].name%>, <%=doc[0].age%></h2>
+						<h4>SOFTWARE DEVELOPER</h4>
+					</div>
+				</div>
+			</div>
+			<div class='row' id='personal-info'>
+				<div id='address'>
+					<div class='col-md-1 col-sm-1'>
+						<i class='fa fa-home fa-3x'></i>
+					</div>
+					<div class='col-md-3 col-sm-3'>
+						<span>123 Alphabet Street</span><br/>
+						<span style='font-weight:700'>Toronto, ON</span>
+					</div>
+				</div>
+
+				<div id='phone-number'>
+					<div class='col-md-1 col-sm-1'>
+						<i class='fa fa-phone fa-3x'></i>
+					</div>
+					<div class='col-md-3 col-sm-3'>
+						<h4>647-123-4567</h4>
+					</div>
+				</div>
+
+				<div id='send-email'>
+					<div class='col-md-1 col-sm-1'>
+						<i class='fa fa-envelope fa-3x'></i>
+					</div>
+					<div class='col-md-3 col-sm-3'>
+						<h4>Send an Email</h4>
+					</div>
+				</div>
+			</div>
+		</div><!--container-fluid-->
+		<div class='container-fluid' id='patient-info'>
+			<div class='row'>
+				<div class='col-md-5 col-md-offset-1' id='drugs'>
+					<h2>Prescribed Medicines</h2>
+					<ul>
+						<li><a href="#drug1">Drug 1</a></li>
+						<li><a href="#drug2">Drug 2</a></li>
+						<li><a href="#drug3">Drug 3</a></li>
+						<li><a href="#drug4">Drug 4</a></li>
+					</ul>
+				</div>
+				<div class='col-md-6 col-sm-6'>
+					<h2>Needs treatment for</h2>
+					<form id='disease-select'>
+						<!-- <label>Disease 1</label> -->
+						<select name='disease1' id='diseases'>
+							<optgroup label='Type A Diseases'>
+								<option value='' disabled selected hidden>Please Choose...</option>
+								<option value='cancer'>Cancer</option>
+								<option value='HIV'>HIV</option>
+								<option value='AIDS'>AIDS</option>
+							</optgroup>
+							<optgroup label='Type B Diseases'>
+								<option value='1'>1</option>
+							</optgroup>
+						</select>
+						<!-- <select name='disease2'>
+							<optgroup label='Type A Diseases'>
+								<option value=''>Cancer</option>
+								<option value='HIV'>HIV</option>
+								<option value='AIDS'>AIDS</option>
+							</optgroup>
+							<optgroup label='Type B Diseases'>
+								<option value='1'>1</option>
+							</optgroup>
+						</select> -->
+					</form>
+				</div>
+			</div><!--patient-info-->
+
+			<div class='row' id='activities'>
+				<div class='col-md-7 col-md-offset-1'>
+					<h2>Recent Activity</h2>
+					<ul id='activity-list'>
+						<li>
+							<label>2 days ago</label>
+							<span>Initial testsamples sent to the lab. Awaiting results.</span>
+						</li>
+					</ul>
+				</div>
+			</div><!--row-->
+
+			<div class='row'>
+				<div class='col-md-4 col-sm-4 pull-right'>
+					<button id='submitToDoctor'>See a Doctor<i class='glyphicon glyphicon-chevron-right'></i></button>
+				</div>
+			</div>
+		</div><!--container-fluid-->
+		<div class='filler'></div>
+
+		<script>
+    		var doc = <%- JSON.stringify(doc) %>;
+    	</script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=" anonymous "></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>     
+		<script type="text/javascript " src="js/patient-info.js "></script>
+		<script type="text/javascript " src="js/main.js "></script>
+	</body>
+</html>
