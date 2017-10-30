@@ -31,6 +31,10 @@ app.use(function(req, res, next) {
 app.engine('html', require('ejs').renderFile);
 // app.set('view engine', 'html');
 
+app.get('/testing', function(req, res) {
+    res.render('testing.ejs');
+})
+
 app.get('/', function(req, res) {
 
     //Setting the original docs
