@@ -108,11 +108,15 @@ body {
 #section2 {
 	margin-top: 10em;
 }
+#section2 h1 {
+	font-weight: 700;
+	text-shadow: 0.5px 0;
+}
 
 #rect1 {
 	position: relative;
 	border-radius: 0.3em;
-	top: 25%;
+	top: 3.5em;
 	left: 40%;
 	width: 100px;
 	height: 50px;
@@ -124,7 +128,7 @@ body {
 #rect2 {
 	position: relative;
 	border-radius: 0.3em;
-	top: 25%;
+	top: 3.5em;
 	left: 40%;
 	width: 100px;
 	height: 50px;
@@ -154,4 +158,10 @@ body {
 						transform: translate(-19em, 0px);	
 	}
 }
+
+
+.filler {
+	height: 300px;
+}
+
 
