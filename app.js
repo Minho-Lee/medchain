@@ -38,7 +38,7 @@ app.get('/process', function(req, res) {
 
 app.get('/pharma', function(req, res) {
 	// console.log("the patient I am looking for in the db: " + req.body.name);
-	var date = new Date().toDateString();
+	var date = new Date().toDateString().substring(4);
 	patient = 'sssaini';
 	Patient.find({
 		"name": patient
