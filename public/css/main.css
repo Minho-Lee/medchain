@@ -209,28 +209,37 @@ body {
 }
 /* * * * * * * * * * * * * */
 
-/* * * * * * * * * * * * * */
-/* main.ejs */
-.glyphicon-heart:hover {
-	color: red;
-}
-
-
-/* * * * * * * * * * * * * */
 
 
 /* * * * * * * * * * * * * */
 /* patient-main.ejs */
+
 #section1 {
 	background-color: rgba(0,0,0,0.8);
 	color: #f6f3f3;
 	padding-left: 4em;
 	height: 600px;
 	padding-right: 4em;
+	padding-top: 2em;
 }
-
+#section1-header h1{
+	float: left;
+	margin-top: 0.5rem;
+	margin-left: 2rem;
+}
+#section1-header img {
+	float: left;	
+}
+#section1 .logo-color-change {
+	color: #F33259;
+	margin-left: 0;	
+}
 #section1-content {
-	margin-top: 10em;
+	margin-top: 8em;
+}
+#section1-content h4 {
+	font-weight: 300;
+	line-height: 1.2em;
 }
 
 #section2 {	
@@ -303,7 +312,7 @@ body {
 /* * * * * * * * * * * * * */
 /* patient-info.ejs */
 #patient-info-ejs {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 #patient-info-ejs nav a{
 	font-family: 'Roboto', sans-serif;
