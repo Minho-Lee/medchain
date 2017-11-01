@@ -130,7 +130,7 @@ body {
 	width: 100px;
 	height: 50px;
 	background: red;
-	animation: myAnimation1 2s linear 1.0s;
+	animation: myAnimation1 2.0s linear 1.0s;
 	animation-fill-mode: forwards;
 }
 
@@ -142,7 +142,7 @@ body {
 	width: 100px;
 	height: 50px;
 	background: blue;
-	animation: myAnimation2 2s linear 1.0s;
+	animation: myAnimation2 2.0s linear 1.0s;
 	animation-fill-mode: forwards;
 }
 
@@ -152,8 +152,8 @@ body {
 						transform: translate(0px, 0px);
 	}
 	100% {
-		-webkit-transform: translate(19em, 0px);
-						transform: translate(19em, 0px);	
+		-webkit-transform: translate(19.30em, 0px);
+						transform: translate(19.30em, 0px);	
 	}
 }
 
@@ -163,8 +163,8 @@ body {
 						transform: translate(0px, 0px);
 	}
 	100% {
-		-webkit-transform: translate(-19em, 0px);
-						transform: translate(-19em, 0px);	
+		-webkit-transform: translate(-19.30em, 0px);
+						transform: translate(-19.30em, 0px);	
 	}
 }
 
@@ -196,6 +196,19 @@ body {
 #resolve:hover {
 	font-size: 1.2em;
 }
+#next-page {
+	margin-top: 1em;
+	color: #fff;
+	width: 15%;
+}
+#next-page i {
+	transition: 0.5s all;
+}
+#next-page:hover i{
+	margin-left: 3em;
+	font-size: 1.2em;
+}
+
 .filler {
 	height: 300px;
 }
