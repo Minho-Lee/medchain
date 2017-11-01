@@ -2,6 +2,15 @@ body {
 	font-family: Raleway, sans-serif;
 	margin-top:50px;
 }
+.radical-button {
+	background-color: #F33259;
+	border: solid red 0.2px;
+	border-radius: 2em;
+	height: 3em;
+}
+.radical-button:focus {
+	outline: none;
+}
 
 #section1 {
 	/*height: 500px;*/
@@ -121,7 +130,7 @@ body {
 	width: 100px;
 	height: 50px;
 	background: red;
-	animation: myAnimation1 2s linear 0.1s;
+	animation: myAnimation1 2s linear 1.0s;
 	animation-fill-mode: forwards;
 }
 
@@ -133,7 +142,7 @@ body {
 	width: 100px;
 	height: 50px;
 	background: blue;
-	animation: myAnimation2 2s linear 0.1s;
+	animation: myAnimation2 2s linear 1.0s;
 	animation-fill-mode: forwards;
 }
 
@@ -159,7 +168,34 @@ body {
 	}
 }
 
+.rect-info {
+	margin-top: 3em;
+	font-size: 2em;
+	font-weight: 700;
+}
 
+#rect1-info {
+	animation: myAnimation1 2s linear 1.0s;
+	animation-fill-mode: forwards;
+}
+#rect2-info {
+	animation: myAnimation2 2s linear 1.0s;
+	animation-fill-mode: forwards;
+}
+#afterResult {
+	margin-top: 3em;
+	font-size: 2em;
+	font-weight: 700;
+}
+#resolve {
+	margin-top: 1em;
+	color: #fff;
+	width: 15%;
+	transition: 0.5s all;
+}
+#resolve:hover {
+	font-size: 1.2em;
+}
 .filler {
 	height: 300px;
 }
