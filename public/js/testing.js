@@ -17,6 +17,7 @@ var checkPosition = function() {
 };
 
 var changeColor = function() {
+	console.log(rect1_left + $rect1.width() + ' / ' + rect2_left);
 	if (rect1_left + $rect1.width() > rect2_left) {
 		console.log('CRASHED!');
 		clearInterval(timer1);
@@ -81,6 +82,7 @@ var addDots = function(id) {
 
 $("#resolve-button-div").on('click', function() {
 	clearInterval(addingDotsTimer);
+	// Need to fix this. 'CRASHED' needs to be checked before this button is called.
 	timer1 = setInterval(function() {
 		checkPosition();
 		changeColor();
