@@ -2,54 +2,51 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- For now I am using Bootstrap 3 cdn link. Feel free to use Bootstrap 4 by replacing the link below -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+	 <title>Bootstrap Example</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <!-- For now I am using Bootstrap 3 cdn link. Feel free to use Bootstrap 4 by replacing the link below -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
-    <script>
-    var doc =
-        <%- JSON.stringify(doc) %>;
-    console.log("the doc is : " + JSON.stringify(doc));
-    </script>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                            <i class="glyphicon glyphicon glyphicon-heart"></i>
-                            Medchain
-                            <!--Image to be inserted later (need photoshop) <img src='/images/medchain_text.png'/> -->
-                    </a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="/patient-main">Patient</a></li>
-                <li><a href="/doctor-main">Doctor</a></li>
-                <li><a href="/pharmacist-main">Pharmacist</a></li>
-            </ul>
-        </div>
-    </nav>
-    <%= doc %>
-        <h1>Doctor info</h1> I prescribe to you this:
-        <form action="pharmacist-main" method="post">
-            <input type="text" name="name">
-            <br> doctor
-            <input type="text" name="doctor"> pharmacist
-            <input type="text" name="pharmacist"> drug1
-            <input type="text" id="drug1" name="drug1">
-            <br> drug2
-            <input type="text" id="drug2" name="drug2">
-            <input id="sendToPharmacy" type="submit" value="Send to pharmacy">
-        </form>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=" anonymous "></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://js.arcgis.com/4.5/"></script>
-        <script type="text/javascript " src="js/doctor-info.js "></script>
+	 <script>
+	 var doc =
+		  <%- JSON.stringify(doc) %>;
+	 console.log("the doc is : " + JSON.stringify(doc));
+	 </script>
+	 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		  <div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">
+						<img src='../images/mclight-logo.png' alt='logo' class='img-responsive' width='70px'/>
+						<!--Image to be inserted later (need photoshop) <img src='/images/medchain_text.png'/> -->
+					</a>
+				</div>
+				<ul class="nav navbar-nav">
+					 <li><a href="/patient-main">Patient</a></li>
+					 <li><a href="/doctor-main">Doctor</a></li>
+					 <li><a href="/pharmacist-main">Pharmacist</a></li>
+				</ul>
+		  </div>
+	 </nav>
+	 <%= doc %>
+		  <h1>Doctor info</h1> I prescribe to you this:
+		  <form action="pharmacist-main" method="post">
+				<input type="text" name="name">
+				<br> doctor
+				<input type="text" name="doctor"> pharmacist
+				<input type="text" name="pharmacist"> drug1
+				<input type="text" id="drug1" name="drug1">
+				<br> drug2
+				<input type="text" id="drug2" name="drug2">
+				<input id="sendToPharmacy" type="submit" value="Send to pharmacy">
+		  </form>
+		  <script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=" anonymous "></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  <script type="text/javascript " src="js/doctor-info.js "></script>
 </body>
 
 </html>
