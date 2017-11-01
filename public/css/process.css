@@ -198,17 +198,23 @@ body {
 }
 #next-page {
 	margin-top: 1em;
-	color: #fff;
 	width: 15%;
 }
+#next-page a{ 
+	color: #fff;
+}
 #next-page i {
+	color: #fff;
 	transition: 0.5s all;
 }
 #next-page:hover i{
 	margin-left: 3em;
 	font-size: 1.2em;
 }
-
+#next-page a:hover {
+	color: #fff;
+	text-decoration-line: none;
+}
 .filler {
 	height: 300px;
 }
