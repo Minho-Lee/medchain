@@ -32,8 +32,8 @@ app.use(function(req, res, next) {
 	next();
 })
 
-app.get('/testing', function(req, res) {
-	res.render('testing.ejs');
+app.get('/process', function(req, res) {
+	res.render('process.ejs');
 });
 
 app.get('/pharma', function(req, res) {
