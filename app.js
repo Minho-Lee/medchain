@@ -37,7 +37,18 @@ app.get('/process', function(req, res) {
 });
 
 app.get('/pharma', function(req, res) {
-	res.render('pharma-test.ejs');
+	// console.log("the patient I am looking for in the db: " + req.body.name);
+	var date = new Date().toDateString();
+	patient = 'sssaini';
+	Patient.find({
+		"name": patient
+	}, function(err, doc) {
+		console.log(doc);
+		res.render('pharma-test.ejs', {
+			doc,
+			date
+		});
+	});
 });
 
 app.engine('html', require('ejs').renderFile);

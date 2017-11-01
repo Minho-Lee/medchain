@@ -1,35 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-			<title>Bootstrap Example</title>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<!-- For now I am using Bootstrap 3 cdn link. Feel free to use Bootstrap 4 by replacing the link below -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-			<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-			<link rel="shortcut icon" href="../favicon.ico">
-			<link rel="stylesheet" type="text/css" href="css/pharma-test.css">
-	</head>
-	<body>
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		  <div class="container-fluid">
+   <head>
+		 <title>Bootstrap Example</title>
+		 <meta charset="utf-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- For now I am using Bootstrap 3 cdn link. Feel free to use Bootstrap 4 by replacing the link below -->
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		 <link rel="shortcut icon" href="../favicon.ico">
+		 <link rel="stylesheet" type="text/css" href="css/pharma-test.css">
+   </head>
+   <body>
+	  	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
 				<div class="navbar-header">
-					 <a class="navbar-brand" href="#">
-						Medchain
-						<!--Image to be inserted later (need photoshop) <img src='/images/medchain_text.png'/> -->
-					</a>
+			   	<a class="navbar-brand" href="/">
+				  		<img src='../images/mclight-logo.png' alt='logo' class='img-responsive' width='70px'/>
+			   	</a>
 				</div>
 				<ul class="nav navbar-nav">
-					 <li class='active'><a href="/patient-main">Patient</a></li>
-					 <li><a href="/doctor-main">Doctor</a></li>
-					 <li><a href="/pharmacist-main">Pharmacist</a></li>
+					<li><a href="/patient-main">Patient</a></li>
+					<li><a href="/doctor-main">Doctor</a></li>
+					<li class='active'><a href="/pharmacist-main">Pharmacist</a></li>
 				</ul>
-			</div>
-		</nav>
+		 	</div>
+	  	</nav>
 
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=" anonymous "></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script type="text/javascript " src="js/main.js "></script>
-	</body>
+   <div class="container invoice">
+	  	<div class="invoice-header">
+			<div class="row">
+				<div class="col-xs-8">
+				   <h1>Invoice <small>With Credit</small></h1>
+				   <h4 class="text-muted">NO: 554775/R1 | Date: <%=date%></h4>
+				</div>
+				<div class="col-xs-4">
+					<div class="media">
+				   	<div class="media-left">
+					  		<img class="media-object logo" src="https://dummyimage.com/70x70/000/fff&text=ACME" />
+				   	</div>
+				   	<ul class="media-body list-unstyled">
+							<li><strong>Acme Corporation</strong></li>
+							<li>Software Development</li>
+							<li>222 Omega Street, Toronto</li>
+							<li>ABCpharmacy.com</li>
+					   </ul>
+					</div>
+		 		</div>
+	  		</div>
+   	</div><!--container invoice-->
+
+	   <div class="invoice-body">
+		  	<div class="row">
+				<div class="col-xs-5">
+					<div class="panel panel-default">
+					   <div class="panel-heading">
+						  <h3 class="panel-title">Company Details</h3>
+					   </div>
+					   <div class="panel-body">
+						  	<dl class="dl-horizontal">
+								<dt>Name</dt>
+								<dd><strong>ABC Pharmacy</strong></dd>
+								<dt>Address</dt>
+								<dd>222 Omega Street, Toronto</dd>
+								<dt>Phone</dt>
+								<dd>(123) 444-5555</dd>
+								<dt>Email</dt>
+								<dd>abc@pharmacy.com</dd>
+								<dt>&nbsp;</dt>
+						   	<dd>&nbsp;</dd>
+							</dl>
+					   </div>
+					</div>
+				</div>
+				<div class="col-xs-7">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						   <h3 class="panel-title">Customer Details</h3>
+						</div>
+						<div class="panel-body">
+						   <dl class="dl-horizontal">
+						   <dt>Name</dt>
+						   <dd><%=doc[0].name%></dd>
+						   <dt>Age</dt>
+						   <dd><%=doc[0].age%></dd>
+						   <dt>Address</dt>
+						   <dd><%=doc[0].address ? doc[0].address : '123 Alphabet Street'%></dd>
+						   <dt>Phone</dt>
+						   <dd><%=doc[0].phoneno ? doc[0].phoneno : '(123) 456-7890'%></dd>
+						   <dt>Email</dt>
+						   <dd>contact@medchain.com</dd>
+						   <dt>&nbsp;</dt>
+						   <dd>&nbsp;</dd>
+						</div>
+					</div>
+			  	</div>
+			</div>
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Services / Products</h3>
+			  	</div>
+			  	<table class="table table-bordered table-condensed">
+					<thead>
+				  		<tr>
+							<th>Item / Details</th>
+							<th class="text-center colfix">Unit Cost</th>
+							<th class="text-center colfix">Sum Cost</th>
+							<th class="text-center colfix">Discount</th>
+							<th class="text-center colfix">Tax</th>
+							<th class="text-center colfix">Total</th>
+				  		</tr>
+					</thead>
+					<tbody>
+				  		<tr>
+							<td>
+						  		Lorem Ipsum Dolor<br/>
+						  		<small class="text-muted">The best lorem in town, try it now or leave forever</small>
+							</td>
+							<td class="text-right">
+						  		<span class="mono">$1,000.00</span><br/>
+						  		<small class="text-muted">Before Tax</small>
+							</td>
+							<td class="text-right">
+						  		<span class="mono">$18,000.00</span><br/>
+						  		<small class="text-muted">18 Units</small>
+							</td>
+							<td class="text-right">
+						  		<span class="mono">- $1,800.00</span><br/>
+						  		<small class="text-muted">Special -10%</small>
+							</td>
+							<td class="text-right">
+						  		<span class="mono">+ $3,240.00</span><br/>
+						  		<small class="text-muted">VAT 20%</small>
+							</td>
+							<td class="text-right">
+						  		<strong class="mono">$19,440.00</strong><br/>
+						  		<small class="text-muted mono">$16,200.00</small>
+							</td>
+				  		</tr>
+					</tbody>
+			  	</table>
+			</div>
+
+			<div class="panel panel-default">
+			  	<table class="table table-bordered table-condensed">
+					<thead>
+				  		<tr>
+							<td class="text-center col-xs-1">Sub Total</td>
+							<td class="text-center col-xs-1">Discount</td>
+							<td class="text-center col-xs-1">Total</td>
+							<td class="text-center col-xs-1">Tax</td>
+							<td class="text-center col-xs-1">Final</td>
+				  	</tr>
+				</thead>
+					<tbody>
+					 	<tr>
+							<th class="text-center rowtotal mono">$18,240.00</th>
+							<th class="text-center rowtotal mono">-$1,800.00</th>
+							<th class="text-center rowtotal mono">$16,440.00</th>
+							<th class="text-center rowtotal mono">$3,312.00</th>
+							<th class="text-center rowtotal mono">$19,752.00</th>
+					  	</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-7">
+					<div class="panel panel-default">
+				 		<div class="panel-body">
+							<i>Comments / Notes</i>
+							<hr style="margin:3px 0 5px" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit repudiandae numquam sit facere blanditiis, quasi distinctio ipsam? Libero odit ex expedita, facere sunt, possimus consectetur dolore, nobis iure amet vero.
+				  		</div>
+					</div>
+			  	</div>
+
+			  	<div class="col-xs-5">
+					<div class="panel panel-default">
+				  		<div class="panel-heading">
+							<h3 class="panel-title">Payment Method</h3>
+				  		</div>
+					  	<div class="panel-body">
+							<p>For your convenience, you may deposite the final ammount at one of our banks</p>
+							<ul class="list-unstyled">
+								<li>TD - <span class="mono">123456789</span></li>
+								<li>Tangerine - <span class="mono">987654321</span></li>
+								<li>RBC - <span class="mono">246813579</span></li>
+							</ul>
+					  	</div>
+					</div>
+				</div>
+			</div>
+	  	</div><!--invoice-body-->
+	 	<div class="invoice-footer">
+			Thank you for choosing our services.
+			<br/> We hope to see you again soon.
+			<br/>
+			<strong>Medchain</strong>
+	  	</div>
+	</div>
+	  <script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=" anonymous "></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script type="text/javascript " src="js/main.js "></script>
+   </body>
 </html>
