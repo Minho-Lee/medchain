@@ -3,7 +3,7 @@ var $rect1 = $("#rect1"), $rect2 =$("#rect2");
 var rect1_left = 0, rect2_left = 1000;
 var timer1, timer2;
 var addingDotsTimer;
-var loadingTime = 1000;
+var loadingTime = 3000;
 
 $(document).ready(function() {
 	addingDotsTimer = setInterval(function() {
