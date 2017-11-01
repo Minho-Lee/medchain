@@ -259,16 +259,17 @@ body {
 	z-index: -1;
 }
 #section2 #login-title{
-	margin-top: 8.5em;
+	margin-top: 35%;
+	margin-left: 5%;
 	color: #D02D50;
 }
 #section2 #login-title:after {
 	content: '';
-	width: 90%;
-	border-bottom: solid 1px rgba(0,0,0,0.8);
+	width: 20%;
+	border-bottom: solid 1px rgba(0,0,0,0.5);
 	z-index: 1;
 	position: absolute;
-	left: 5%;
+	left: 10%;
 }
 #section2 #login-main{
 	margin-top: 13em;
@@ -281,7 +282,7 @@ body {
 	background-color: inherit;
 	border: none;
 	border-bottom: solid rgba(0,0,0,0.5) 1px;
-	width: 70%;
+	width: 60%;
 	padding-bottom: 1em;
 	transition: 0.5s;
 }
