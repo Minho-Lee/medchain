@@ -9,6 +9,8 @@ $(document).ready(function() {
 			console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 		});
 
+	var form = $("#disease-select");
+	
 	$('#submitToDoctor').click(function(e) {
 		var diseaseElement = document.getElementById("diseases");
 		var diseaseToAdd = diseaseElement.options[diseaseElement.selectedIndex].value;
