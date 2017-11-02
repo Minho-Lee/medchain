@@ -1,6 +1,11 @@
 body {
-	font-family: Raleway, sans-serif;
+	font-family: Roboto, sans-serif;
 	margin-top:50px;
+}
+.navbar .navbar-nav>li>a:focus, .navbar .navbar-nav>li>a:hover {
+	outline: none;
+	color: #9d9d9d;
+	cursor: not-allowed;
 }
 .radical-button {
 	background-color: #F33259;
@@ -199,12 +204,9 @@ body {
 #next-page {
 	margin-top: 1em;
 	width: 15%;
-}
-#next-page a{ 
 	color: #fff;
 }
 #next-page i {
-	color: #fff;
 	transition: 0.5s all;
 }
 #next-page:hover i{

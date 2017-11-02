@@ -25,7 +25,7 @@ app.use(express.static(__dirname + '/public'));
 var patient = "sssaini";
 var doctor = "1";
 var pharmacist = "pharmacist";
-
+var drug1 = '', drug2 = '';
 app.use(function(req, res, next) {
 	// res.header('Access-Control-Allow-Origin', "x-requested-with");
 	// res.header("Access-Control-Allow-Headers", "*");
@@ -33,7 +33,12 @@ app.use(function(req, res, next) {
 })
 
 app.get('/process', function(req, res) {
-	res.render('process.ejs');
+	drug1 = req.body.drug1;
+	drug2 = req.body.drug2;
+	res.render('process.ejs', {
+		drug1,
+		drug2
+	});
 });
 
 app.get('/pharma', function(req, res) {

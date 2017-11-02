@@ -51,7 +51,7 @@
 						<% if (doc[0].address){ %>
 							<%= doc[0].address %>
 						<% } else { %>
-							<%= "123 Alphabet Street" %>
+							<%= "150 Bloor St. West" %>
 						<% } %>
 					</h4>
 					<br/>
@@ -63,7 +63,7 @@
 					<i class='fa fa-phone fa-3x'></i>
 				</div>
 				<div class='col-md-3 col-sm-3'>
-					<h4><%= doc[0].phoneno ? doc[0].phoneno : "647-123-4567"%></h4>
+					<h4><%= doc[0].phoneno ? doc[0].phoneno : "647-315-9287"%></h4>
 				</div>
 			</div>
 			<div id='send-email'>
@@ -84,10 +84,9 @@
 				<div class='col-md-5 col-md-offset-1' id='drugs'>
 					<h2>Prescribed Medicines</h2>
 					<ul>
-						<li><a href="#drug1">Drug 1</a></li>
-						<li><a href="#drug2">Drug 2</a></li>
-						<li><a href="#drug3">Drug 3</a></li>
-						<li><a href="#drug4">Drug 4</a></li>
+						<% for(var i = 0; i < doc[0].drugs.length; i++) { %>
+							<li><%= doc[0].drugs[i] %></li>
+						<% } %>
 					</ul>
 				</div>
 				<div class='col-md-6 col-sm-6'>
