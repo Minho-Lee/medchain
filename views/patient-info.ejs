@@ -85,7 +85,9 @@
 					<h2>Prescribed Medicines</h2>
 					<ul>
 						<% for(var i = 0; i < doc[0].drugs.length; i++) { %>
-							<li><%= doc[0].drugs[i] %></li>
+							<% if (doc[0].drugs[i].length > 0) { -%>
+								<li><%= doc[0].drugs[i] %></li>	
+							<% } %>
 						<% } %>
 					</ul>
 				</div>

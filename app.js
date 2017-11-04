@@ -32,12 +32,13 @@ app.use(function(req, res, next) {
 	next();
 })
 
-app.get('/process', function(req, res) {
+app.post('/process', function(req, res) {
 	drug1 = req.body.drug1;
 	drug2 = req.body.drug2;
+	// console.log(drug1 + ' / ' + drug2);
 	res.render('process.ejs', {
-		drug1,
-		drug2
+		drug1: drug1,
+		drug2: drug2,
 	});
 });
 
@@ -219,7 +220,7 @@ app.post('/doctor-info', function(req, res) {
 app.post('/pharmacist-main', function(req, res) {
 
 	console.log("doc is " + doctor);
-
+	console.log(req.body);
 	var query3 = Doctor.findOne({
 		"name": doctor
 	}, "name age patients", function(err, doc) {

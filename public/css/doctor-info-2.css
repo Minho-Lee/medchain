@@ -1,0 +1,15 @@
+#section2:before {
+    background: none;
+}
+
+#section2 h2 {
+    color: #000;
+}
+
+#section2 .row {
+    margin-top: 6em;
+}
+
+#section1-content {
+    margin-top: 0;
+}
