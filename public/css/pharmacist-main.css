@@ -27,6 +27,20 @@ body {
   text-align: center;
   color: #999;
 }
+.invoice .invoice-footer a {
+	color: #337ab7;
+}
+.invoice .invoice-footer a h4{
+	display: inline-block;
+	transition: 1.0s all;
+}
+.invoice .invoice-footer a h4:hover {
+
+}
+.logo-color-change {
+	color: #F33259;
+	margin-left: 0;
+}
 .panel-default .panel-heading {
 	background-color: #F33259;
 	color: #fff;
@@ -35,7 +49,6 @@ body {
   max-height: 70px;
   border-radius: 10px;
 }
-
 .dl-horizontal {
   margin: 0;
 }

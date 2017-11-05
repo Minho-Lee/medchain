@@ -43,20 +43,20 @@ app.post('/process', function(req, res) {
 	});
 });
 
-app.get('/pharma', function(req, res) {
-	// console.log("the patient I am looking for in the db: " + req.body.name);
-	var date = new Date().toDateString().substring(4);
-	patient = 'sssaini';
-	Patient.find({
-		"name": patient
-	}, function(err, doc) {
-		console.log(doc);
-		res.render('pharma-test.ejs', {
-			doc,
-			date
-		});
-	});
-});
+// app.post('/pharma', function(req, res) {
+// 	// console.log("the patient I am looking for in the db: " + req.body.name);
+// 	var date = new Date().toDateString().substring(4);
+// 	patient = 'sssaini';
+// 	Patient.find({
+// 		"name": patient
+// 	}, function(err, doc) {
+// 		console.log(doc);
+// 		res.render('pharma-test.ejs', {
+// 			doc,
+// 			date
+// 		});
+// 	});
+// });
 
 // app.post('/doctor-info-old', function(req, res) {
 // 	res.render('doctor-info-old.ejs');
@@ -223,8 +223,10 @@ app.post('/doctor-info', function(req, res) {
 });
 
 app.post('/pharmacist-main', function(req, res) {
+	var date = new Date().toDateString().substring(4);
 
-	console.log("doc is " + doctor);
+	console.log("the patient I am looking for in the db: " + req.body.name);
+	console.log("doctor is " + doctor);
 	console.log(req.body);
 	var query3 = Doctor.findOne({
 		"name": doctor
@@ -285,14 +287,14 @@ app.post('/pharmacist-main', function(req, res) {
 							console.log('got an error ' + err);
 						}
 
-						var patient = doc3;
-
+						patient = doc3;
+						
 						// console.log("the patient drug array is: "+ patient)
 						var num_of_drugs = patient.drugs.length
 						for (var i = 0; i < num_of_drugs; i++) {
 							for (var j = i + 1; j < num_of_drugs; j++) {
 								if (patient.drugs[i] === patient.drugs[j]) {
-									console.log('i: ' + i + '/patient drugs: ' + patient.drugs[i]);
+									console.log('i: ' + i + '/ patient drugs: ' + patient.drugs[i]);
 									patient.drugs.splice(i, 1);
 								}
 							}
@@ -301,11 +303,15 @@ app.post('/pharmacist-main', function(req, res) {
 						doc3.save(function(err, doc) {
 							if (err) return handleError(err);
 						});
-					});
-				query4.then(function(doc3) {
-					res.render('pharmacist-main.ejs', {
-						doc: doc,
-						patient: doc3
+					})
+					.then(function(doc3) {
+						console.log('****PATIENT*****');
+						console.log(patient);
+						console.log('name:', patient.name);
+						res.render('pharmacist-main.ejs', {
+							doc: doc,
+							patient: doc3,
+							date,
 					});
 				});
 			};

@@ -3,7 +3,8 @@ var $rect1 = $("#rect1"), $rect2 =$("#rect2");
 var rect1_left = 0, rect2_left = 1000;
 var timer1, timer2;
 var addingDotsTimer;
-var loadingTime = 3000;
+// 3000, 60, 0.5
+var loadingTime = 500, mergeTimer = 10, movingSpeed = 2;
 
 $(document).ready(function() {
 	addingDotsTimer = setInterval(function() {
@@ -29,8 +30,8 @@ var initialEnter = true;
 var slowMerge = function() {
 	$rect1.offset({ left: rect1_left });
 	$rect2.offset({ left: rect2_left });
-	rect1_left += 0.5;
-	rect2_left -= 0.5;
+	rect1_left += movingSpeed;
+	rect2_left -= movingSpeed;
 	if (initialEnter) {
 		$("#section2 h1").text('Fixing ').append('<span class="dots"></span>');
 		initialEnter = false;
@@ -79,12 +80,13 @@ var addDots = function(id) {
 
 $("#resolve-button-div").on('click', 'button', function() {
 	$("#resolve").prop('disabled', true)
-					 .text('In Progress');
+					 .text('In Progress')
+					 .css('cursor', 'not-allowed');
 	clearInterval(addingDotsTimer);
 	timer2 = setInterval(function() {
 		slowMerge();
 		completeMerge();
-	}, 60);
+	}, mergeTimer);
 });
 
 // This is to hide the main 'loading' screen after a certain time (loadingTime).

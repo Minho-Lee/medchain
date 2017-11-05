@@ -17,8 +17,8 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/">
-						medchain
-					</a>
+					medchain
+				</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li class='active'><a href="#">Patient</a></li>
@@ -94,7 +94,7 @@
 				<div class='col-md-6 col-sm-6'>
 					<h2>Needs treatment for</h2>
 					<!-- <label>Disease 1</label> -->
-					<select name='disease1' id='diseases'>
+					<select name='disease1' id='diseases' required>
 						<optgroup label='Type A Diseases'>
 							<option value='' disabled selected hidden>Please Choose...</option>
 							<option value='cancer'>Cancer</option>
@@ -128,16 +128,16 @@
 						</li>
 					</ul>
 				</div>
+			</div><!--row-->
+			
+			<div class='row'>
+				<div class='col-md-4 col-sm-4 pull-right'>
+					<button id='submitToDoctor' type='submit'>See a Doctor<i class='glyphicon glyphicon-chevron-right'></i></button>
+				</div>
 			</div>
-		</div>
-		<!--container-fluid-->
+		</div><!--container-fluid-->
 	</form>
-	<!--row-->
-	<div class='row'>
-		<div class='col-md-4 col-sm-4 pull-right'>
-			<button id='submitToDoctor'>See a Doctor<i class='glyphicon glyphicon-chevron-right'></i></button>
-		</div>
-	</div>
+
 	<div class='filler'></div>
 	<script>
 	var doc = <%- JSON.stringify(doc) %>;
