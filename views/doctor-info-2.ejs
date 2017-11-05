@@ -10,7 +10,7 @@
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	 <link rel="stylesheet" type="text/css" href="css/main.css">
-	 <link rel="stylesheet" type="text/css" href="css/doctor-info.css">
+	 <link rel="stylesheet" type="text/css" href="css/doctor-info-2.css">
 </head>
 
 <body id='patient-info-ejs'>
@@ -18,15 +18,13 @@
 		  <div class="container-fluid">
 				<div class="navbar-header">
 					 <a class="navbar-brand" href="#">
-								<i class="glyphicon glyphicon glyphicon-heart"></i>
-								Medchain
-								<!--Image to be inserted later (need photoshop) <img src='/images/medchain_text.png'/> -->
-						  </a>
+						medchain
+					</a>
 				</div>
 				<ul class="nav navbar-nav">
-					 <li class='active'><a href="/patient-main">Patient</a></li>
-					 <li><a href="/doctor-main">Doctor</a></li>
-					 <li><a href="/pharmacist-main">Pharmacist</a></li>
+					 <li><a href="#">Patient</a></li>
+					 <li class='active'><a href="#">Doctor</a></li>
+					 <li><a href="#">Pharmacist</a></li>
 				</ul>
 		  </div>
 	 </nav>
@@ -39,63 +37,45 @@
 						  <h1>med<h1 class='logo-color-change'>chain</h1></h1>
 					 </div>
 					 <div class='row'>
-						  <br>
-						  <br>
-						  <div>
+						  <div class='margin-top-medium'>
 								<img src='../images/square-sample-face.jpg' width='120px' class='img-responsive' />
 						  </div>
 						  <div id='section1-content'>
 								<h1>Sukhpal Saini, 21</h1>
 								<h3>100 Aphabet Streat</h3>
 								<h4>Toronto ON</h4>
-								<br>
 								<h4>(647) 456-2389</h4>
-								<br>
-								<br>
-								<br>
-								<input id='login-button' type="submit" value="Send an email">
 						  </div>
 					 </div>
 				</div>
 				<div class='col-md-8 col-sm-8' id='section2'>
-					 <div class='row'>
-						  <form id='disease-select' method="POST" action="/pharmacist-main">
-								<div class='container-fluid' id='patient-info'>
-									 <div class='row'>
-										  <h2>Prescription</h2>
-										  <!-- <label>Disease 1</label> -->
-										  <select name='drug1' id='diseases'>
-												<option value='' disabled selected hidden>Please Choose...</option>
-												<option value='bloodthinner'>Blood Thinner</option>
-												<option value='bloodthinner2'>Blood Thinner 2</option>
-										  </select>
-										  <select name='drug2' id='diseases'>
-												<option value='' disabled selected hidden>Please Choose...</option>
-												<option value='aspirin'>Aspirin</option>
-												<option value='tylenol'>Tylenol</option>
-										  </select>
-										  <h2>Doctor's comments</h2>
-										  <textarea rows="4" cols="50">
-												At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-										  </textarea>
-										  <br>
-										  <input id='login-button' type="submit" value="Submit To Pharmacist">
-									 </div>
-								</div>
-								<!--container-fluid-->
-						  </form>
-					 </div>
-					 <!-- section2 -->
-				</div>
-				<!-- row -->
-		  </div>
-		  <!--container-fluid-->
-		  <script>
-		  </script>
-		  <script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=" anonymous "></script>
-		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		  <script type="text/javascript " src="js/doctor-info.js "></script>
-		  <script type="text/javascript " src="js/main.js "></script>
-</body>
-
+					<form id='prescription' method="POST" action="/process">
+						<h2>Prescription</h2>
+						<select name='drug1' id='drug1' required>
+							<option value='' disabled selected hidden>Please Choose...</option>
+							<option value='bloodthinner'>Blood Thinner</option>
+							<option value='bloodthinner2'>Blood Thinner 2</option>
+						</select>
+						<select name='drug2' id='drug2' required>
+							<option value='' disabled selected hidden>Please Choose...</option>
+							<option value='aspirin'>Aspirin</option>
+							<option value='tylenol'>Tylenol</option>
+						</select>
+						<h2>Doctor's comments</h2>
+						<textarea rows="4" cols="50">
+							hello
+						</textarea>
+						<br>
+						<input id='sendToPharmacy' class='radical-button' type="submit" value="Submit To Pharmacist">
+					</form>
+				</div><!-- section2 -->
+		  </div><!--container-fluid-->
+		<script>
+			
+		</script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=" anonymous "></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript " src="js/doctor-info.js "></script>
+		<script type="text/javascript " src="js/main.js "></script>
+	</body>
 </html>

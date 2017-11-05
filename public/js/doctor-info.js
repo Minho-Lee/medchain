@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-	$('#sendToPharmacy').click(function(e) {
+	$('#sendToPharmacy').on('click', function() {
 		var drug1 = $("#drug1").val();
-
+		
 		$.post("http://localhost:3000/api/Drug", {
 				"$class": "org.acme.medchain.Drug",
 				"drugId": drug1,
@@ -24,6 +24,7 @@ $(document).ready(function() {
 
 
 		var drug2 = $("#drug2").val();
+		// console.log('drug1: ' + drug1 + ' / drug2: ' + drug2);
 
 		$.post("http://localhost:3000/api/Drug", {
 				"$class": "org.acme.medchain.Drug",
@@ -44,5 +45,4 @@ $(document).ready(function() {
 					});
 			});
 	});
-
 });

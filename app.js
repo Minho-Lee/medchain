@@ -35,7 +35,8 @@ app.use(function(req, res, next) {
 app.post('/process', function(req, res) {
 	drug1 = req.body.drug1;
 	drug2 = req.body.drug2;
-	// console.log(drug1 + ' / ' + drug2);
+	console.log('****** PROCESS *******');
+	console.log(drug1 + ' / ' + drug2);
 	res.render('process.ejs', {
 		drug1: drug1,
 		drug2: drug2,
@@ -57,6 +58,9 @@ app.get('/pharma', function(req, res) {
 	});
 });
 
+app.post('/doctor-info-2', function(req, res) {
+	res.render('doctor-info-2.ejs');
+})
 app.engine('html', require('ejs').renderFile);
 // app.set('view engine', 'html');
 
