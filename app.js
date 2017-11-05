@@ -58,9 +58,10 @@ app.get('/pharma', function(req, res) {
 	});
 });
 
-app.post('/doctor-info-2', function(req, res) {
-	res.render('doctor-info-2.ejs');
-})
+// app.post('/doctor-info-old', function(req, res) {
+// 	res.render('doctor-info-old.ejs');
+// })
+
 app.engine('html', require('ejs').renderFile);
 // app.set('view engine', 'html');
 
