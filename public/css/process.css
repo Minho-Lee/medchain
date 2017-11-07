@@ -177,6 +177,11 @@ body {
 	margin-top: 3em;
 	font-size: 2em;
 	font-weight: 700;
+	transition: all 7.0s;
+}
+.customClass1 {
+	opacity: 0;
+	height: 0;
 }
 
 #rect1-info {
@@ -188,15 +193,18 @@ body {
 	animation-fill-mode: forwards;
 }
 #afterResult {
-	margin-top: 3em;
+	/*margin-top: 3em;*/
 	font-size: 2em;
 	font-weight: 700;
 }
+#resolve-button-div {
+	transition: margin-top 7.0s ease;
+	margin-top: 3rem;
+}
 #resolve {
-	margin-top: 1em;
 	color: #fff;
 	width: 15%;
-	transition: 0.5s all;
+	transition: all 0.5s linear;
 }
 #resolve:hover {
 	font-size: 1.2em;

@@ -223,7 +223,7 @@ body {
 	background-color: rgba(0,0,0,0.8);
 	color: #f6f3f3;
 	padding-left: 4em;
-	height: 600px;
+	min-height: 600px;
 	padding-right: 4em;
 	padding-top: 2em;
 }

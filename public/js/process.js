@@ -44,6 +44,8 @@ var slowMerge = function() {
 }
 
 var completeMerge = function() {
+	$("#rect1-info, #rect2-info").addClass('customClass1');
+
 	if (Math.abs(rect1_left - rect2_left) < 1) {
 		// The red rect won't merge perfectly ( <1px difference )
 		$rect2.offset({ left : rect2_left - 1.05 });
@@ -51,8 +53,6 @@ var completeMerge = function() {
 		console.log('MERGED');
 		clearInterval(timer2);
 		clearInterval(addingDotsTimer);
-
-		$("#rect1-info, #rect2-info").animate({ opacity: 0}, 1500).addClass('hidden');
 		$("#afterResult").hide().removeClass('hidden').slideDown(1000);
 		$("#resolve-button-div").slideUp(1);
 		$("#next-page-div").hide().removeClass('hidden').slideDown(1000);
@@ -81,7 +81,13 @@ var addDots = function(id) {
 $("#resolve-button-div").on('click', 'button', function() {
 	$("#resolve").prop('disabled', true)
 					 .text('In Progress')
-					 .css('cursor', 'not-allowed');
+					 .css({
+					 	'margin-top': '40px',
+					 	'cursor': 'not-allowed',
+					 });
+	$(this).animate({
+		marginTop: '+=20'
+	}, 7000);
 	clearInterval(addingDotsTimer);
 	timer2 = setInterval(function() {
 		slowMerge();

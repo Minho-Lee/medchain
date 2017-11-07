@@ -26,6 +26,8 @@ var patient = "sssaini";
 var doctor = "1";
 var pharmacist = "pharmacist";
 var drug1 = '', drug2 = '';
+var duplicateArray = [];
+
 app.use(function(req, res, next) {
 	// res.header('Access-Control-Allow-Origin', "x-requested-with");
 	// res.header("Access-Control-Allow-Headers", "*");
@@ -295,6 +297,8 @@ app.post('/pharmacist-main', function(req, res) {
 							for (var j = i + 1; j < num_of_drugs; j++) {
 								if (patient.drugs[i] === patient.drugs[j]) {
 									console.log('i: ' + i + '/ patient drugs: ' + patient.drugs[i]);
+									duplicateArray.push(patient.drugs[i], patient.drugs[j]);
+									console.log(duplicateArray);
 									patient.drugs.splice(i, 1);
 								}
 							}
