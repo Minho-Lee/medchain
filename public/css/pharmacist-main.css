@@ -2,9 +2,19 @@ body {
 	font-family: Roboto, sans-serif;
 	margin-top: 50px;
 }
+.radical-button {
+	background-color: #F33259;
+	border: solid red 0.2px;
+	border-radius: 2em;
+	height: 3em;
+}
+.radical-button:focus {
+	outline: none;
+}
 .invoice {
   width: 970px !important;
   margin: 50px auto;
+  margin-top: 0;
 }
 .invoice .invoice-header {
   padding: 25px 25px 15px;
@@ -74,9 +84,15 @@ body {
 }
 
 .colfix {
-  width: 12%;
+  /*width: 12%;*/
+  width: 15%;
 }
 
 .mono {
   font-family: monospace;
+}
+#sendToProcess {
+	height: 2em;
+	width: 80%;
+	color: #fff;
 }

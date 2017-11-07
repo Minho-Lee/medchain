@@ -62,7 +62,7 @@
 						  	<dl class="dl-horizontal">
 								<dt>Name</dt>
 								<dd><strong>Acruz Pharmacy</strong></dd>
-								<dt>Address</dt>
+							<dt>Address</dt>
 								<dd>300 Front St. West, Toronto</dd>
 								<dt>Phone</dt>
 								<dd>(647) 142-9811</dd>
@@ -86,7 +86,7 @@
 						   <dt>Age</dt>
 						   <dd><%=patient.age%></dd>
 						   <dt>Address</dt>
-						   <dd><%=patient.address ? patient.address : '288 Spadina Road'%></dd>
+						   <dd><%=patient.address ? patient.address : '288 Spadina Road'%>, Toronto</dd>
 						   <dt>Phone</dt>
 						   <dd><%=patient.phoneno ? patient.phoneno : '(416) 338-1882'%></dd>
 						   <dt>Email</dt>
@@ -106,9 +106,10 @@
 					<thead>
 				  		<tr>
 							<th>Item / Details</th>
-							<th class="text-center colfix">Unit Cost</th>
-							<th class="text-center colfix">Sum Cost</th>
-							<th class="text-center colfix">Discount</th>
+							<!-- <th class="text-center colfix">Unit Cost</th>
+							<th class="text-center colfix">Sum Cost</th> -->
+							<th class='text-center colfix'>Duplicate</th>
+							<th class="text-center colfix">Cost</th>
 							<th class="text-center colfix">Tax</th>
 							<th class="text-center colfix">Total</th>
 				  		</tr>
@@ -119,25 +120,38 @@
 						  		Lorem Ipsum Dolor<br/>
 						  		<small class="text-muted">The best lorem in town, try it now or leave forever</small>
 							</td>
-							<td class="text-right">
+							<!-- <td class="text-right">
 						  		<span class="mono">$10.00</span><br/>
+						  		<small class="text-muted">Before Tax</small>
+							</td> -->
+							<td class="text-right">
+						  		<span class="mono">
+						  			<% if (duplicateArray) { -%>
+						  				<% for (var i = 0; i < duplicateArray.length; i++) { -%>
+						  					<ol>
+						  						<ul><%=duplicateArray[i]%></li>
+						  					</ol>
+						  				<% } -%>
+						  				<form method='post' action='/process'>
+						  					<button id='sendToProcess' class='radical-button' type='submit'>Fix!</button>
+						  				</form>
+						  			<% } else { -%>
+						  				None Found!
+						  			<% } -%>
+						  		</span><br/>
+						  		
+							</td>
+							<td class="text-right">
+						  		<span class="mono">$20.00</span><br/>
 						  		<small class="text-muted">Before Tax</small>
 							</td>
 							<td class="text-right">
-						  		<span class="mono">$180.00</span><br/>
-						  		<small class="text-muted">18 Units</small>
+						  		<span class="mono">$2.60</span><br/>
+						  		<small class="text-muted">HST 13%</small>
 							</td>
 							<td class="text-right">
-						  		<span class="mono">- $18.00</span><br/>
-						  		<small class="text-muted">Special -10%</small>
-							</td>
-							<td class="text-right">
-						  		<span class="mono">+ $32.40</span><br/>
-						  		<small class="text-muted">VAT 20%</small>
-							</td>
-							<td class="text-right">
-						  		<strong class="mono">$194.40</strong><br/>
-						  		<small class="text-muted mono">$162.00</small>
+						  		<strong class="mono">$22.60</strong><br/>
+						  		<small class="text-muted mono">$20.00</small>
 							</td>
 				  		</tr>
 					</tbody>

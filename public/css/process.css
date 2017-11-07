@@ -215,6 +215,7 @@ body {
 	color: #fff;
 }
 #next-page i {
+	margin-left: 1em;
 	transition: 0.5s all;
 }
 #next-page:hover i{

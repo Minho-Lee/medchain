@@ -35,13 +35,11 @@ app.use(function(req, res, next) {
 })
 
 app.post('/process', function(req, res) {
-	drug1 = req.body.drug1;
-	drug2 = req.body.drug2;
 	console.log('****** PROCESS *******');
 	console.log(drug1 + ' / ' + drug2);
 	res.render('process.ejs', {
-		drug1: drug1,
-		drug2: drug2,
+		drug1,
+		drug2,
 	});
 });
 
@@ -226,7 +224,9 @@ app.post('/doctor-info', function(req, res) {
 
 app.post('/pharmacist-main', function(req, res) {
 	var date = new Date().toDateString().substring(4);
-
+	duplicateArray = [];
+	drug1 = req.body.drug1;
+	drug2 = req.body.drug2;
 	console.log("the patient I am looking for in the db: " + req.body.name);
 	console.log("doctor is " + doctor);
 	console.log(req.body);
@@ -248,7 +248,7 @@ app.post('/pharmacist-main', function(req, res) {
 		console.log(doc);
 		var update2 = {
 			$push: {
-				drugs: { $each: [req.body.drug1, req.body.drug2] }
+				drugs: { $each: [drug1, drug2] }
 			}
 		};
 
@@ -292,14 +292,15 @@ app.post('/pharmacist-main', function(req, res) {
 						patient = doc3;
 						
 						// console.log("the patient drug array is: "+ patient)
-						var num_of_drugs = patient.drugs.length
-						for (var i = 0; i < num_of_drugs; i++) {
-							for (var j = i + 1; j < num_of_drugs; j++) {
+						for (var i = 0; i < patient.drugs.length; i++) {
+							for (var j = i + 1; j < patient.drugs.length; j++) {
 								if (patient.drugs[i] === patient.drugs[j]) {
-									console.log('i: ' + i + '/ patient drugs: ' + patient.drugs[i]);
-									duplicateArray.push(patient.drugs[i], patient.drugs[j]);
+									console.log('i:' , i , '/ patient drugs:' , patient.drugs[i]);
+									console.log('j:' , j , '/ patient drugs:' , patient.drugs[j]);
+									duplicateArray.push(patient.drugs[i]);
 									console.log(duplicateArray);
-									patient.drugs.splice(i, 1);
+									patient.drugs.splice(j, 1);
+									j = patient.drugs.length;
 								}
 							}
 						}
@@ -310,10 +311,11 @@ app.post('/pharmacist-main', function(req, res) {
 					})
 					.then(function(doc3) {
 						console.log('****PATIENT*****');
-						console.log(patient);
-						console.log('name:', patient.name);
+						console.log(doc3);
+						console.log('name:', doc3.name);
 						res.render('pharmacist-main.ejs', {
 							doc: doc,
+							duplicateArray,
 							patient: doc3,
 							date,
 					});
