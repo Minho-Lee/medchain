@@ -4,7 +4,7 @@ var rect1_left = 0, rect2_left = 1000;
 var timer1, timer2;
 var addingDotsTimer;
 // 3000, 60, 0.5
-var loadingTime = 3000, mergeTimer = 60, movingSpeed = 0.5;
+var loadingTime = 1000, mergeTimer = 60, movingSpeed = 2.5;
 
 $(document).ready(function() {
 	addingDotsTimer = setInterval(function() {

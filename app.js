@@ -38,8 +38,7 @@ app.post('/process', function(req, res) {
 	console.log('****** PROCESS *******');
 	console.log(drug1 + ' / ' + drug2);
 	res.render('process.ejs', {
-		drug1,
-		drug2,
+		duplicateArray,
 	});
 });
 
@@ -125,7 +124,7 @@ app.post('/doctor-main', function(req, res) {
 	console.log(req.body);
 
 	doctor = "1";
-	if (req.body.disease1 === "cancer") { doctor = "1"; } else { doctor = "2"; }
+	if (req.body.disease1 === "Hepatitis") { doctor = "1"; } else { doctor = "2"; }
 
 	var options = {
 		safe: true,
@@ -311,8 +310,10 @@ app.post('/pharmacist-main', function(req, res) {
 					})
 					.then(function(doc3) {
 						console.log('****PATIENT*****');
-						console.log(doc3);
-						console.log('name:', doc3.name);
+						// console.log(doc3);
+						// console.log('name:', doc3.name);
+						console.log('DUP ARRAY ****');
+						console.log(duplicateArray);
 						res.render('pharmacist-main.ejs', {
 							doc: doc,
 							duplicateArray,

@@ -93,6 +93,13 @@ body {
 }
 #sendToProcess {
 	height: 2em;
-	width: 80%;
+	width: 85%;
 	color: #fff;
+}
+#sendToProcess i{
+	transition: all 0.5s;
+	margin-left: 1em;
+}
+#sendToProcess:hover i{
+	margin-left: 2em;
 }
