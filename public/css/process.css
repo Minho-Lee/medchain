@@ -183,7 +183,6 @@ body {
 	opacity: 0;
 	height: 0;
 }
-
 #rect1-info {
 	animation: myAnimation1 2s linear 1.0s;
 	animation-fill-mode: forwards;

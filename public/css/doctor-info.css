@@ -1,3 +1,6 @@
+#section1 {
+	padding-left: 5em;
+}
 #section2:before {
   background: none;
 }
@@ -42,13 +45,15 @@
 	margin-left: 2%;
 }
 #prescription select[name='drug2'] {
-	margin-left: 5%;
+	margin-left: 15%;
 }
 #prescription select:focus {
 	outline: none;
 }
 #prescription textarea {
+	margin-top: 1em;
 	margin-left: 2%;
+	text-indent: 1rem;
 }
 
 

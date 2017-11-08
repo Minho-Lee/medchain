@@ -4,7 +4,8 @@ var rect1_left = 0, rect2_left = 1000;
 var timer1, timer2;
 var addingDotsTimer;
 // 3000, 60, 0.5
-var loadingTime = 3000, mergeTimer = 60, movingSpeed = 0.5;
+var loadingTime = 500, mergeTimer = 60, movingSpeed = 0.5;
+var currLeft, startLeft, dir = 6;
 
 $(document).ready(function() {
 	addingDotsTimer = setInterval(function() {
@@ -53,8 +54,8 @@ var completeMerge = function() {
 		console.log('MERGED');
 		clearInterval(timer2);
 		clearInterval(addingDotsTimer);
+		$("#resolve-button-div").slideUp(500);
 		$("#afterResult").hide().removeClass('hidden').slideDown(1000);
-		$("#resolve-button-div").slideUp(1);
 		$("#next-page-div").hide().removeClass('hidden').slideDown(1000);
 		$("#section2 h1").text('Problem Resolved');
 	}
@@ -82,19 +83,29 @@ $("#resolve-button-div").on('click', 'button', function() {
 	$("#resolve").prop('disabled', true)
 					 .text('In Progress')
 					 .css({
-					 	'margin-top': '40px',
+					 	'marginTop' : '30px',
 					 	'cursor': 'not-allowed',
 					 });
-	$(this).animate({
-		marginTop: '+=20'
-	}, 7000);
+	// console.log($(this).offset());
+	startLeft = $(this).offset().left;
 	clearInterval(addingDotsTimer);
 	timer2 = setInterval(function() {
 		slowMerge();
 		completeMerge();
+		shake($('#resolve').offset().left);
 	}, mergeTimer);
 });
 
+var shake = function(left) {
+	currLeft = left;
+	if (currLeft > startLeft + 10 || currLeft < startLeft - 10) {
+		// console.log('currLeft:', currLeft, 'startLeft + 20:', startLeft+20);
+		dir = -dir;
+	}
+	currLeft += dir;
+	$('#resolve').offset({ left : currLeft });
+
+}
 // This is to hide the main 'loading' screen after a certain time (loadingTime).
 window.setTimeout(function() {
 	$("#section1").hide(1000);

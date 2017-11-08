@@ -18,10 +18,8 @@ body {
 
 #section2 {
 	color: #fff;
-	padding-right: 3em;
-	padding-left: 3em;
-	padding-top: 3em;
-	padding-bottom: 3em;
+	padding: 3em;
+	position: relative;
 }
 
 #section2:before {
@@ -37,7 +35,10 @@ body {
 
 
 #login-button {
-	margin: 3em;
+	position: absolute;
+	left: 15%;
+	bottom: 10%;
+
 }
 
 .renderjson a {
