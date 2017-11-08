@@ -1,25 +1,17 @@
-// $(document).ready(function() {
-// 	$('.nav li a').click(function(e) {
-//       //var $btn = $('.nav li button');
-//       var $parent = $(this).parent();
-//       //var $hash = $(this)[0].hash;
-//       $('.nav li').removeClass('active');
-      
-//       // console.log($parent);
-//       // console.log($parent.parent());
+$(document).ready(function() {
+	$(".footer a").hover(
+		//This is mouseover
+		function() {
+			// console.log($(this));
+			$(this)[0].firstChild.style.color = '#F33259';
+			$(this)[0].lastChild.style.color ='#F6F3F3';
 
-//       if (!$parent.hasClass('active')) {
-//          if ($parent.parent().hasClass('dropdown-menu')) {
-//             //adding active class to the list which is a direct child of ul navbar
-//             $parent.parent().parent().addClass('active');
-            
-//          } else {
-//             $parent.addClass('active');
-//          }
-//       }
-//       e.preventDefault();
-//    });
-// }); //document.ready
+		//This is mouseleave
+		}, function() {
+			$(this)[0].firstChild.style.color = '#F6F3F3';
+			$(this)[0].lastChild.style.color ='#F33259';
+	});
+});
 
 
 

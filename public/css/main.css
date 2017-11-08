@@ -246,7 +246,25 @@ body {
 	font-weight: 300;
 	line-height: 1.2em;
 }
-
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	color: #F6F3F3;
+}
+.footer a {
+	color: #F6F3F3;
+}
+.footer a:hover {
+	text-decoration: none;
+	cursor: alias;
+}
+.footer span {
+	transition: color 0.6s linear;
+}
+.footer .color-change {
+	color: #F33259;
+}
 #section2 {	
 	color: #fff;
 	height: 700px;
