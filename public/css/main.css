@@ -223,7 +223,7 @@ body {
 	background-color: rgba(0,0,0,0.8);
 	color: #f6f3f3;
 	padding-left: 4em;
-	min-height: 600px;
+	min-height: 700px;
 	padding-right: 4em;
 	padding-top: 2em;
 }
@@ -249,7 +249,7 @@ body {
 
 #section2 {	
 	color: #fff;
-	height: 600px;
+	height: 700px;
 	padding-right: 3em;
 	padding-left: 3em;
 }
@@ -327,9 +327,6 @@ body {
 /* * * * * * * * * * * * * */
 /* patient-info.ejs */
 #patient-info-ejs {
-	font-family: 'Roboto', sans-serif;
-}
-#patient-info-ejs nav a{
 	font-family: 'Roboto', sans-serif;
 }
 #header-section {

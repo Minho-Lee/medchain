@@ -5,6 +5,7 @@ var patientSchema = new Schema({
     name: String,
     age: String,
     gender: String,
+    comments: [String],
     diseases: [String],
     drugs: [String],
 });

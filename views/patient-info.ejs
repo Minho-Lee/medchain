@@ -106,16 +106,6 @@
 							<option value='Anxiety'>Anxiety</option>
 						</optgroup>
 					</select>
-					<!-- <select name='disease2'>
-							<optgroup label='Type A Diseases'>
-								<option value=''>Cancer</option>
-								<option value='HIV'>HIV</option>
-								<option value='AIDS'>AIDS</option>
-							</optgroup>
-							<optgroup label='Type B Diseases'>
-								<option value='1'>1</option>
-							</optgroup>
-						</select> -->
 				</div>
 			</div>
 			<!--patient-info-->
@@ -123,10 +113,20 @@
 				<div class='col-md-7 col-md-offset-1'>
 					<h2>Recent Activity</h2>
 					<ul id='activity-list'>
-						<li>
-							<label>2 days ago</label>
-							<span>Initial test samples sent to the lab. Awaiting results.</span>
-						</li>
+						<% if (doc[0].comments) { -%>
+							<% var j = doc[0].comments.length -%>
+							<% for (var i = 0; i < doc[0].comments.length; i++) { -%>
+								<% if (doc[0].comments[i].length > 0) { -%>
+									<li>
+										<label><%= j %> days ago</label>
+										<span><%= doc[0].comments[i] %></span>
+									</li>
+								<% } -%>
+								<% j-- -%>
+							<% } -%>	
+						<% } else { -%>
+							<li><label>No comments</label></li>
+						<% } -%>
 					</ul>
 				</div>
 			</div><!--row-->

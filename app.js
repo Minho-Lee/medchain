@@ -113,8 +113,10 @@ app.post('/patient-info', function(req, res) {
 		"name": req.body.name
 	}, function(err, doc) {
 		console.log(doc);
+		// console.log('comments !!!!!:', doc[0].comments);
+		// console.log('drugs !!!!!!!:', doc[0].drugs);
 		res.render('patient-info.ejs', {
-			doc: doc
+			doc,
 		});
 	});
 });
@@ -133,7 +135,8 @@ app.post('/doctor-main', function(req, res) {
 
 	var update = {
 		$push: {
-			diseases: req.body.disease1
+			diseases: req.body.disease1,
+			comments: "Appointment booked",
 		}
 	};
 
@@ -176,7 +179,7 @@ app.post('/doctor-main', function(req, res) {
 				console.log(doc)
 
 				res.render('doctor-main.ejs', {
-					doc: doc,
+					doc,
 					patient: doc2
 				});
 			}
@@ -226,9 +229,13 @@ app.post('/pharmacist-main', function(req, res) {
 	duplicateArray = [];
 	drug1 = req.body.drug1;
 	drug2 = req.body.drug2;
-	console.log("the patient I am looking for in the db: " + req.body.name);
+
+	console.log("***** Body: %j", req.body);
+   var comments = req.body.comments;
+
+	console.log("the patient I am looking for in the db: " + patient);
 	console.log("doctor is " + doctor);
-	console.log(req.body);
+
 	var query3 = Doctor.findOne({
 		"name": doctor
 	}, "name age patients", function(err, doc) {
@@ -247,7 +254,8 @@ app.post('/pharmacist-main', function(req, res) {
 		console.log(doc);
 		var update2 = {
 			$push: {
-				drugs: { $each: [drug1, drug2] }
+				drugs: { $each: [drug1, drug2] },
+				comments: { $each: ["Prescription added: " + drug1 + " " + drug2, comments] },
 			}
 		};
 
@@ -257,7 +265,7 @@ app.post('/pharmacist-main', function(req, res) {
 			if (err) {
 				console.log('got an error ' + err);
 			} else {
-				console.log('saved');
+				console.log('Patient found and saved');
 			}
 		});
 
@@ -277,7 +285,7 @@ app.post('/pharmacist-main', function(req, res) {
 			if (err) {
 				console.log('got an error ' + err);
 			} else {
-				console.log('saved');
+				console.log('Pharmacist found and saved');
 
 				console.log("namw: " + doc.customers[0].patient);
 
