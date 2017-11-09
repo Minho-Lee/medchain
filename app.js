@@ -295,10 +295,10 @@ app.post('/pharmacist-main', function(req, res) {
 						if (err) {
 							console.log('got an error ' + err);
 						}
-
 						patient = doc3;
-						
-						// console.log("the patient drug array is: "+ patient)
+					})
+					.then(function(doc3) {
+						console.log('****PATIENT*****');
 						for (var i = 0; i < patient.drugs.length; i++) {
 							for (var j = i + 1; j < patient.drugs.length; j++) {
 								if (patient.drugs[i] === patient.drugs[j]) {
@@ -315,11 +315,6 @@ app.post('/pharmacist-main', function(req, res) {
 						doc3.save(function(err, doc) {
 							if (err) return handleError(err);
 						});
-					})
-					.then(function(doc3) {
-						console.log('****PATIENT*****');
-						// console.log(doc3);
-						// console.log('name:', doc3.name);
 						console.log('DUP ARRAY ****');
 						console.log(duplicateArray);
 						res.render('pharmacist-main.ejs', {

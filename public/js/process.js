@@ -1,5 +1,5 @@
 var i = 0;
-var $rect1 = $("#rect1"), $rect2 =$("#rect2");
+var $rect1 = $("#rect1 img"), $rect2 =$("#rect2 img");
 var rect1_left = 0, rect2_left = 1000;
 var timer1, timer2;
 var addingDotsTimer;
@@ -17,10 +17,16 @@ var checkPosition = function() {
 	rect1_left = $rect1.offset().left;
 	rect2_left = $rect2.offset().left;
 };
-
+$("#testing1").on('click', function() {
+	// $rect1.animate({
+	// 	left: '+=5px',
+	// }, 500);
+	console.log($("#rect1 img").offset().left);
+	
+})
 var changeColor = function() {
 	console.log(rect1_left + $rect1.width() + ' / ' + rect2_left);
-	if (rect1_left + $rect1.width() > rect2_left) {
+	if (rect2_left - (rect1_left + $rect1.width()) < 0.5) {
 		console.log('CRASHED!');
 		clearInterval(timer1);
 		$("#resolve-button-div").hide().removeClass('hidden').fadeIn(1000);
@@ -41,14 +47,15 @@ var slowMerge = function() {
 			addDots('section2');	
 		}, 700);
 	}
-	
 }
 
 var completeMerge = function() {
 	$("#rect1-info, #rect2-info").addClass('customClass1');
-
-	if (Math.abs(rect1_left - rect2_left) < 1) {
+	console.log(rect1_left , ' /', rect2_left);
+	if (Math.abs(rect1_left - rect2_left) < 0.25) {
 		// The red rect won't merge perfectly ( <1px difference )
+		$rect1.removeClass('moveRight');
+		$rect2.removeClass('moveLeft');
 		$rect2.offset({ left : rect2_left - 1.05 });
 		console.log($rect1.offset().left + ' / ' + $rect2.offset().left);
 		console.log('MERGED');
@@ -89,6 +96,8 @@ $("#resolve-button-div").on('click', 'button', function() {
 	// console.log($(this).offset());
 	startLeft = $(this).offset().left;
 	clearInterval(addingDotsTimer);
+	$rect1.removeClass('myAnimation1');
+	$rect2.removeClass('myAnimation2');
 	timer2 = setInterval(function() {
 		slowMerge();
 		completeMerge();

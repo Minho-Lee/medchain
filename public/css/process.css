@@ -127,52 +127,104 @@ body {
 	text-shadow: 0.5px 0;
 }
 
+.pills img{
+	width: 15%;
+	position: absolute;
+	left: 40%;
+}
+.hue-rotate {
+	filter: hue-rotate(90deg);
+}
 #rect1 {
-	position: relative;
-	border-radius: 0.3em;
-	top: 3.5em;
-	left: 40%;
-	width: 100px;
-	height: 50px;
-	background: red;
-	animation: myAnimation1 2.0s linear 1.0s;
-	animation-fill-mode: forwards;
-}
 
+}
+#rect1 img {
+	
+}
+.myAnimation1 {
+	-webkit-animation: myAnimation1 2.0s linear 1.0s forwards;
+					animation: myAnimation1 2.0s linear 1.0s forwards;
+}
 #rect2 {
-	position: relative;
-	border-radius: 0.3em;
-	top: 3.5em;
-	left: 40%;
-	width: 100px;
-	height: 50px;
-	background: blue;
-	animation: myAnimation2 2.0s linear 1.0s;
-	animation-fill-mode: forwards;
+	
 }
-
+#rect2 img {
+	
+}
+.myAnimation2 {
+	-webkit-animation: myAnimation2 2.0s linear 1.0s forwards;
+					animation: myAnimation2 2.0s linear 1.0s forwards;
+}
+@-webkit-keyframes myAnimation1{
+	from {
+		left: 40%;
+	}
+	to {
+		left: 85%;
+	}
+}
 @keyframes myAnimation1 {
-	0% {
-		-webkit-transform: translate(0px, 0px);
-						transform: translate(0px, 0px);
+	from {
+		left: 40%;
 	}
-	100% {
-		-webkit-transform: translate(19.30em, 0px);
-						transform: translate(19.30em, 0px);	
+	to {
+		left: 85%;
 	}
 }
-
+@-webkit-keyframes myAnimation2 {
+	from {
+		left: 40%;
+	} to {
+		left: 0%;
+	}
+}
 @keyframes myAnimation2 {
-	0% {
-		-webkit-transform: translate(0px, 0px);
-						transform: translate(0px, 0px);
-	}
-	100% {
-		-webkit-transform: translate(-19.30em, 0px);
-						transform: translate(-19.30em, 0px);	
+	from {
+		left: 40%;
+	} to {
+		left: 0%;
 	}
 }
-
+.moveLeft {
+	-webkit-animation: moveLeft 20s linear forwards;
+					animation: moveLeft 20s linear forwards;
+}
+.moveRight {
+	-webkit-animation: moveRight 20s linear forwards;
+					animation: moveRight 20s linear forwards;
+}
+@-webkit-keyframes moveLeft {
+	from {
+		left: 0%;
+	}
+	to {
+		left: -25%;
+	}
+}
+@keyframes moveLeft {
+	from {
+		left: 0%;
+	}
+	to {
+		left: -25%;
+	}
+}
+@-webkit-keyframes moveRight {
+	from {
+		left: 85%;
+	}
+	to {
+		left: 110%;
+	}
+}
+@keyframes moveRight {
+	from {
+		left: 85%;
+	}
+	to {
+		left: 110%;
+	}
+}
 .rect-info {
 	margin-top: 3em;
 	font-size: 2em;
@@ -184,12 +236,12 @@ body {
 	height: 0;
 }
 #rect1-info {
-	animation: myAnimation1 2s linear 1.0s;
-	animation-fill-mode: forwards;
+	/*animation: myAnimation1 2s linear 1.0s;
+	animation-fill-mode: forwards;*/
 }
 #rect2-info {
-	animation: myAnimation2 2s linear 1.0s;
-	animation-fill-mode: forwards;
+	/*animation: myAnimation2 2s linear 1.0s;
+	animation-fill-mode: forwards;*/
 }
 #afterResult {
 	/*margin-top: 3em;*/
