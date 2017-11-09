@@ -218,12 +218,20 @@ body {
 
 /* * * * * * * * * * * * * */
 /* patient-main.ejs */
-
+#color-one {
+	color: #F6F3F3;
+	transition: color 0.6s linear;
+}
+#color-two {
+	color: #F33259;
+	transition: color 0.6s linear;
+}
 #section1 {
 	background-color: rgba(0,0,0,0.8);
 	color: #f6f3f3;
 	padding-left: 4em;
-	min-height: 700px;
+	/*min-height: 700px;*/
+	height: 100vh;
 	padding-right: 4em;
 	padding-top: 2em;
 }
@@ -259,6 +267,9 @@ body {
 	text-decoration: none;
 	cursor: alias;
 }
+.footer a:focus {
+	text-decoration: none;
+}
 .footer span {
 	transition: color 0.6s linear;
 }
@@ -267,7 +278,7 @@ body {
 }
 #section2 {	
 	color: #fff;
-	height: 700px;
+	height: 100vh;
 	padding-right: 3em;
 	padding-left: 3em;
 }

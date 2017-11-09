@@ -93,13 +93,52 @@ body {
 }
 #sendToProcess {
 	height: 2em;
-	width: 85%;
+	width: 70%;
 	color: #fff;
+	transition: width 0.5s linear;
+}
+#sendToProcess:hover {
+	width: 80%;
 }
 #sendToProcess i{
-	transition: all 0.5s;
+	transition: all 0.5s linear;
 	margin-left: 1em;
 }
 #sendToProcess:hover i{
 	margin-left: 2.5em;
+	-webkit-animation: crank-wrench 1.0s infinite linear;
+					animation: crank-wrench 1.0s infinite linear;
 }
+@-webkit-keyframes crank-wrench {
+	25% {
+		-webkit-transform: rotateZ(-45deg);
+						transform: rotateZ(-45deg);
+	} 50% {
+		-webkit-transform: rotateZ(0deg);
+						transform: rotateZ(0deg);
+	} 75% {
+		-webkit-transform: rotateZ(45deg);
+						transform: rotateZ(45deg);
+	} 100% {
+		-webkit-transform: rotateZ(0deg);
+						transform: rotateZ(0deg);
+	}
+}
+@keyframes crank-wrench {
+	25% {
+		-webkit-transform: rotateZ(-45deg);
+						transform: rotateZ(-45deg);
+	} 50% {
+		-webkit-transform: rotateZ(0deg);
+						transform: rotateZ(0deg);
+	} 75% {
+		-webkit-transform: rotateZ(45deg);
+						transform: rotateZ(45deg);
+	} 100% {
+		-webkit-transform: rotateZ(0deg);
+						transform: rotateZ(0deg);
+	}
+}
+
+
+
