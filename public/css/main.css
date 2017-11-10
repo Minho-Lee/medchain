@@ -212,6 +212,22 @@ body {
 .radical-button:focus {
 	outline: none;
 }
+.initialSlideIn {
+	animation: initialSlideIn 1.0s linear;
+}
+@keyframes initialSlideIn {
+	0% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	50% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}
 /* * * * * * * * * * * * * */
 
 

@@ -7,6 +7,15 @@ body {
 	color: #9d9d9d;
 	cursor: not-allowed;
 }
+#color-one {
+	color: #F6F3F3;
+}
+#color-two {
+	color: #F33259;
+}
+#color-one, #color-two {
+	transition: color 0.6s linear;
+}
 .radical-button {
 	background-color: #F33259;
 	border: solid red 0.2px;
@@ -20,7 +29,6 @@ body {
 #section1 {
 	/*height: 500px;*/
 	margin-top: 8em;
-
 }
 
 .sk-folding-cube {
@@ -131,25 +139,17 @@ body {
 	width: 15%;
 	position: absolute;
 	left: 40%;
+	transition: filter 6.2s linear;
 }
-.hue-rotate {
-	filter: hue-rotate(90deg);
+.hue-rotate1 {
+	filter: hue-rotate(105deg);
 }
-#rect1 {
-
-}
-#rect1 img {
-	
+.hue-rotate2 {
+	filter: hue-rotate(-105deg);
 }
 .myAnimation1 {
 	-webkit-animation: myAnimation1 2.0s linear 1.0s forwards;
 					animation: myAnimation1 2.0s linear 1.0s forwards;
-}
-#rect2 {
-	
-}
-#rect2 img {
-	
 }
 .myAnimation2 {
 	-webkit-animation: myAnimation2 2.0s linear 1.0s forwards;
@@ -236,12 +236,32 @@ body {
 	height: 0;
 }
 #rect1-info {
-	/*animation: myAnimation1 2s linear 1.0s;
-	animation-fill-mode: forwards;*/
+	-webkit-animation: moveInfoRight 2.0s linear 1.0s forwards;
+					animation: moveInfoRight 2.0s linear 1.0s forwards;
 }
 #rect2-info {
-	/*animation: myAnimation2 2s linear 1.0s;
-	animation-fill-mode: forwards;*/
+	-webkit-animation: moveInfoLeft 2.0s linear 1.0s forwards;
+					animation: moveInfoLeft 2.0s linear 1.0s forwards;
+}
+@-webkit-keyframes moveInfoRight {
+	100% {
+		transform: translateX(40%);
+	}
+}
+@keyframes moveInfoRight {
+	100% {
+		transform: translateX(40%);
+	}
+}
+@-webkit-keyframes moveInfoLeft {
+	100% {
+		transform: translateX(-40%);
+	}
+}
+@keyframes moveInfoLeft {
+	100% {
+		transform: translateX(-40%);
+	}
 }
 #afterResult {
 	/*margin-top: 3em;*/
@@ -272,10 +292,19 @@ body {
 #next-page:hover i{
 	margin-left: 3em;
 	font-size: 1.2em;
+	animation: bounce 2s infinite;
 }
 #next-page a:hover {
 	color: #fff;
 	text-decoration-line: none;
+}
+@keyframes bounce{
+	0%, 20%, 50%, 80%, 100% {
+		transform: translateY(0);
+	}
+	35%, 65% {
+		transform: translateY(-0.5em);
+	}
 }
 .filler {
 	height: 300px;

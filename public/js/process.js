@@ -39,6 +39,9 @@ var slowMerge = function() {
 	$rect2.offset({ left: rect2_left });
 	rect1_left += movingSpeed;
 	rect2_left -= movingSpeed;
+	//Hue change
+	$rect1.addClass('hue-rotate1');
+	$rect2.addClass('hue-rotate2');
 	if (initialEnter) {
 		$("#section2 h1").text('Fixing ').append('<span class="dots"></span>');
 		initialEnter = false;
