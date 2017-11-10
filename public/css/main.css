@@ -249,7 +249,7 @@ body {
 	color: #f6f3f3;
 	padding-left: 4em;
 	/*min-height: 700px;*/
-	height: 100vh;
+	height: 95vh;
 	padding-right: 4em;
 	padding-top: 2em;
 }
@@ -296,7 +296,7 @@ body {
 }
 #section2 {	
 	color: #fff;
-	height: 100vh;
+	height: 95vh;
 	padding-right: 3em;
 	padding-left: 3em;
 }

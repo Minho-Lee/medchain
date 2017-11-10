@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$(".invoice-footer a").hover(
+	$(".invoice-footer button").hover(
 		//This is mouseover
 		function() {
 			$(this)[0].firstChild.style.color = '#F33259';

@@ -84,11 +84,15 @@
 				<div class='col-md-5 col-md-offset-1' id='drugs'>
 					<h2>Prescribed Medicines</h2>
 					<ul>
-						<% for(var i = 0; i < doc[0].drugs.length; i++) { %>
-							<% if (doc[0].drugs[i].length > 0) { -%>
-								<li><%= doc[0].drugs[i] %></li>	
+						<%	if (doc[0].drugs.length > 0) { -%>
+							<% for(var i = 0; i < doc[0].drugs.length; i++) { %>
+								<% if (doc[0].drugs[i].length > 0) { -%>
+									<li><%= doc[0].drugs[i] %></li>	
+								<% } %>
 							<% } %>
-						<% } %>
+						<% } else { -%>
+							<h4 style='margin-left: 1.25em;'>No Medications</h4>
+						<% } -%>
 					</ul>
 				</div>
 				<div class='col-md-6 col-sm-6'>
@@ -103,7 +107,7 @@
 						</optgroup>
 						<optgroup label='Type B Medical Conditions'>
 							<option value='Depression'>Depressive Disorder</option>
-							<option value='Anxiety'>Anxiety</option>
+							<option value='Diabetes'>Diabetes</option>
 						</optgroup>
 					</select>
 				</div>
@@ -128,7 +132,7 @@
 								<% j-- -%>
 							<% } -%>	
 						<% } else { -%>
-							<li><label>No Comments</label></li>
+							<h4>No Comments</h4>
 						<% } -%>
 					</ul>
 				</div>

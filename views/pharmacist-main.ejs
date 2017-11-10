@@ -117,8 +117,9 @@
 					<tbody>
 				  		<tr>
 							<td>
-						  		Lorem Ipsum Dolor<br/>
-						  		<small class="text-muted">The best lorem in town, try it now or leave forever</small>
+						  		<b><%= drug1 %></b><br/>
+						  		<b><%= drug2 %></b>
+						  		<!-- <small class="text-muted">The best lorem in town, try it now or leave forever</small> -->
 							</td>
 							<!-- <td class="text-right">
 						  		<span class="mono">$10.00</span><br/>
@@ -187,7 +188,9 @@
 							<h4 class="panel-title">Comments / Notes</h4>
 				  		</div>
 				 		<div class="panel-body">
-							<hr style="margin:3px 0 5px" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit repudiandae numquam sit facere blanditiis, quasi distinctio ipsam? Libero odit ex expedita, facere sunt, possimus consectetur dolore, nobis iure amet vero.
+							<hr style="margin:3px 0 5px" />
+							<%= patient.comments[patient.comments.length-2] %><br/>
+							<%= patient.comments[patient.comments.length-1] %>
 				  		</div>
 					</div>
 			  	</div>
@@ -213,7 +216,10 @@
 			Thank you for choosing our services.
 			<br/> We hope to see you again soon.
 			<br/>
-			<a href='/'><h4>med</h4><h4 class='logo-color-change'>chain</h4></a>
+			<form method='POST' action='/patient-info'>
+				<input class='hidden' name='name' value='sukhpal'/>
+				<button type='submit'><h4>med</h4><h4 class='logo-color-change'>chain</h4></button>
+			</form>
 	  	</div>
 	</div>
 	  <script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=" anonymous "></script>

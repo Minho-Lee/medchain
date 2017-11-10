@@ -4,7 +4,7 @@ var rect1_left = 0, rect2_left = 1000;
 var timer1, timer2;
 var addingDotsTimer;
 // 3000, 60, 0.5
-var loadingTime = 500, mergeTimer = 60, movingSpeed = 0.5;
+var loadingTime = 3000, mergeTimer = 60, movingSpeed = 0.5;
 var currLeft, startLeft, dir = 6;
 
 $(document).ready(function() {
@@ -55,7 +55,7 @@ var slowMerge = function() {
 var completeMerge = function() {
 	$("#rect1-info, #rect2-info").addClass('customClass1');
 	console.log(rect1_left , ' /', rect2_left);
-	if (Math.abs(rect1_left - rect2_left) < 0.25) {
+	if (Math.abs(rect1_left - rect2_left) < 0.5) {
 		// The red rect won't merge perfectly ( <1px difference )
 		$rect1.removeClass('moveRight');
 		$rect2.removeClass('moveLeft');

@@ -37,14 +37,17 @@ body {
   text-align: center;
   color: #999;
 }
-.invoice .invoice-footer a {
+.invoice .invoice-footer button {
 	color: #337ab7;
+	border: none;
+	outline: none;
+	background-color: none;
 }
-.invoice .invoice-footer a h4{
+.invoice .invoice-footer button h4{
 	display: inline-block;
 	transition: 1.0s all;
 }
-.invoice .invoice-footer a h4:hover {
+.invoice .invoice-footer button h4:hover {
 
 }
 .logo-color-change {

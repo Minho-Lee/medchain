@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 
-var patient = "sssaini";
+var patient = "sukhpal";
 var doctor = "1";
 var pharmacist = "pharmacist";
 var drug1 = '', drug2 = '';
@@ -318,6 +318,8 @@ app.post('/pharmacist-main', function(req, res) {
 						console.log('DUP ARRAY ****');
 						console.log(duplicateArray);
 						res.render('pharmacist-main.ejs', {
+							drug1,
+							drug2,
 							doc: doc,
 							duplicateArray,
 							patient: doc3,
