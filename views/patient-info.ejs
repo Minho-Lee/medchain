@@ -113,9 +113,12 @@
 				<div class='col-md-7 col-md-offset-1'>
 					<h2>Recent Activity</h2>
 					<ul id='activity-list'>
-						<% if (doc[0].comments.length > 0) { -%>
-							<% var j = doc[0].comments.length -%>
-							<% for (var i = 0; i < doc[0].comments.length; i++) { -%>
+						<% var leng = doc[0].comments.length %>
+						<% if (leng > 0) { -%>
+							<% var j = (leng > 10) ? 10 : leng;
+								var placeholder = j;
+							-%>
+							<% for (var i = leng-placeholder; i < leng; i++) { -%>
 								<% if (doc[0].comments[i].length > 0) { -%>
 									<li>
 										<label><%= j %> days ago</label>

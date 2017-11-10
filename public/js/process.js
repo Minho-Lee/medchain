@@ -35,8 +35,8 @@ var changeColor = function() {
 
 var initialEnter = true;
 var slowMerge = function() {
-	$rect1.offset({ left: rect1_left });
-	$rect2.offset({ left: rect2_left });
+	$rect1.show().offset({ left: rect1_left });
+	$rect2.show().offset({ left: rect2_left });
 	rect1_left += movingSpeed;
 	rect2_left -= movingSpeed;
 	//Hue change
@@ -99,8 +99,8 @@ $("#resolve-button-div").on('click', 'button', function() {
 	// console.log($(this).offset());
 	startLeft = $(this).offset().left;
 	clearInterval(addingDotsTimer);
-	$rect1.removeClass('myAnimation1');
-	$rect2.removeClass('myAnimation2');
+	$rect1.hide().removeClass('myAnimation1');
+	$rect2.hide().removeClass('myAnimation2');
 	timer2 = setInterval(function() {
 		slowMerge();
 		completeMerge();

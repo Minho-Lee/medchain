@@ -217,6 +217,7 @@ body {
 }
 @keyframes initialSlideIn {
 	0% {
+		z-index: -2;
 		opacity: 0;
 		transform: translateX(-100%);
 	}
@@ -224,6 +225,7 @@ body {
 		opacity: 0.3;
 	}
 	100% {
+		z-index: auto;
 		opacity: 1;
 		transform: translateX(0%);
 	}
