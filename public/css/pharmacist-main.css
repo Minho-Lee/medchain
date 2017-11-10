@@ -41,7 +41,7 @@ body {
 	color: #337ab7;
 	border: none;
 	outline: none;
-	background-color: none;
+	background-color: transparent;
 }
 .invoice .invoice-footer button h4{
 	display: inline-block;

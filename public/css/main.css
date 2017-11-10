@@ -303,6 +303,7 @@ body {
 #section2:before {
 	content: "";
 	background: url('../images/phone-pic-2.png') no-repeat;
+	background-size: cover;
 	position: absolute;
 	top: 0;
 	left: 0;
